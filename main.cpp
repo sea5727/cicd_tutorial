@@ -10,6 +10,9 @@ int main(int, char**) {
 
     int minus = proc_minus(10, 1);
     printf("minus : %d\n", minus);
+
+    int mul = proc_multi(10, 10);
+    printf("mul : %d\n", mul);
     return 0;
 
 }
