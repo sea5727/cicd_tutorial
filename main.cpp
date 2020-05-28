@@ -3,6 +3,7 @@
 
 int main(int, char**) {
     std::cout << "Hello, world!\n";
+    std::cout << "this is test_branch_3 input\n";
 
     int result = proc_plus(1, 10);
     printf("result : %d\n", result);
