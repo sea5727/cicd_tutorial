@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test start?'
-                docker run -t -i --rm --name "centos7.4-base" "centos7.4-base" /bin/bash
+                docker run --help
                 
             }
         }
