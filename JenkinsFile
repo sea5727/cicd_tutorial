@@ -4,6 +4,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test start?'
+                docker run -it --rm centos7.4-base /bin/bash
+                
             }
         }
         stage('Test1'){
