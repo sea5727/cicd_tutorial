@@ -7,11 +7,23 @@ pipeline {
     stages {
         stage('Test') {
             agent { dockerfile true }
+            node {
+                def customImage = docker.build("test-image", "./Dockerfile") 
+                customImage.inside{
+                    sh 'ls'
+                }
+            }
             steps {
                 echo 'Test start?'
                 sh 'pwd'
                 sh 'ls'
-                sh "which docker"
+                node {
+                    def customImage = docker.build("test-image", "./Dockerfile") 
+                    customImage.inside{
+                        sh 'ls'
+                    }
+                }
+
             }
         }
         stage('Test1'){
