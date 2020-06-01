@@ -1,3 +1,9 @@
+node {
+    def customImage = docker.build("test-image", "./Dockerfile") 
+    customImage.inside{
+        sh 'ls'
+    }
+}
 pipeline {
     environment {
         registry = "docker_hub_account/repository_name"
@@ -7,12 +13,7 @@ pipeline {
     stages {
         stage('Test') {
             agent { dockerfile true }
-            node {
-                def customImage = docker.build("test-image", "./Dockerfile") 
-                customImage.inside{
-                    sh 'ls'
-                }
-            }
+
             steps {
                 echo 'Test start?'
                 sh 'pwd'
