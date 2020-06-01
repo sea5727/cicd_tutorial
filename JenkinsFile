@@ -1,27 +1,10 @@
 
 pipeline {
-    agent { dockerfile true }
-    environment {
-        registry = "docker_hub_account/repository_name"
-        registryCredential = 'dockerhub'
-    }
+    agent any
     stages {
-        stage('Test') {
+        stage('Example') {
             steps {
-                sh 'node --version'
-                echo 'Test start?'
-                sh 'pwd'
-                sh 'ls'
-            }
-        }
-        stage('Test1'){
-            steps {
-                echo 'Test1 start?'
-            }
-        }
-        stage('Test2'){
-            steps{
-                echo 'Test2 start?'
+                echo 'Hello world'
             }
         }
     }
