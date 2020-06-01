@@ -9,9 +9,9 @@ pipeline {
             agent { dockerfile true }
             steps {
                 echo 'Test start?'
-                sh "which docker"
                 sh 'pwd'
                 sh 'ls'
+                sh "which docker"
             }
         }
         stage('Test1'){
