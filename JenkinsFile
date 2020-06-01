@@ -1,7 +1,8 @@
 pipeline {
-    agent { dockerfile true }
+    agent none
     stages {
         stage('Test') {
+            agent { dockerfile true }
             steps {
                 echo 'Test start?'
                 shell "docker run -t -i --name centos7.4-base centos7.4-base /bin/bash"
