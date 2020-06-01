@@ -22,4 +22,9 @@ RUN  yum -y install tar unzip vi vim telnet net-tools curl openssl \
 
 ENV LANG=ko_KR.utf8 TZ=Asia/Seoul
 
+RUN useradd -ms /bin/bash developer
+
+USER devoloper
+WORKDIR /home/devoloper
+
 CMD ["/bin/bash"]
