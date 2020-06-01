@@ -9,7 +9,7 @@ pipeline {
             agent { dockerfile true }
             steps {
                 echo 'Test start?'
-                sh "docker run -t -i --name centos7.4-base centos7.4-base /bin/bash"
+                sh "docker --help"
                 sh 'pwd'
                 sh 'ls'
             }
