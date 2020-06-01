@@ -4,9 +4,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test start?'
-                shell "docker run -t -i --rm --name centos7.4-base centos7.4-base /bin/bash"
-                echo 'pwd'
+                shell "docker run -t -i --name centos7.4-base centos7.4-base /bin/bash"
                 sh 'pwd'
+                sh 'ls'
             }
         }
         stage('Test1'){
