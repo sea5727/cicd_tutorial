@@ -8,7 +8,9 @@ pipeline {
             steps {
                 echo 'Hello world'
                 sh 'echo myCustomEnvVar = $myCustomEnvVar'
-                sh 'yum repolist all'
+                sh 'echo testfile > aa'
+                sh 'cat aa'
+                sh 'pwd'
             }
         }
     }
