@@ -1,25 +1,17 @@
 
 pipeline {
+    agent { dockerfile true }
     environment {
         registry = "docker_hub_account/repository_name"
         registryCredential = 'dockerhub'
     }
-    agent none
     stages {
         stage('Test') {
-            agent { dockerfile true }
-
             steps {
+                sh 'node --version'
                 echo 'Test start?'
                 sh 'pwd'
                 sh 'ls'
-                node {
-                    def customImage = docker.build("test-image", "./Dockerfile") 
-                    customImage.inside{
-                        sh 'ls'
-                    }
-                }
-
             }
         }
         stage('Test1'){
