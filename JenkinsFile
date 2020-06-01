@@ -9,7 +9,7 @@ pipeline {
             agent { dockerfile true }
             steps {
                 echo 'Test start?'
-                sh "docker --help"
+                sh "which docker"
                 sh 'pwd'
                 sh 'ls'
             }
