@@ -14,6 +14,11 @@ pipeline {
                 sh 'pwd'
             }
         }
+        stage('two'){
+            steps{
+                sh 'cat main.cpp'
+            }
+        }
     }
     post {
         always {
