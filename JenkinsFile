@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
+                git clone https://github.com/sea5727/cicd_tutorial.git
                 echo 'Hello world'
                 sh 'echo myCustomEnvVar = $myCustomEnvVar'
                 sh 'echo testfile > aa'
