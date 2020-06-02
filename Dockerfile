@@ -24,7 +24,7 @@ ENV LANG=ko_KR.utf8 TZ=Asia/Seoul
 
 RUN useradd -ms /bin/bash developer
 
-USER devoloper
-WORKDIR /home/devoloper
+USER developer
+WORKDIR /home/developer
 
 CMD ["/bin/bash"]
